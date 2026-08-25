@@ -51,7 +51,7 @@ export const destinations: Destination[] = [
     name: "Andaman",
     country: "India",
     image:
-      "https://images.unsplash.com/photo-1587135941948-670b381f08ce?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80",
     description:
       "Dive into coral reefs and unwind on powder-white beaches across the Andaman Islands' turquoise coastline.",
     price: 30000,
@@ -124,7 +124,7 @@ export const destinations: Destination[] = [
     name: "Sri Lanka",
     country: "Sri Lanka",
     image:
-      "https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1585155770913-cc8a6637ea5d?auto=format&fit=crop&w=1200&q=80",
     description:
       "Ride the hill-country train through emerald tea plantations and spot leopards in Yala National Park.",
     price: 60000,

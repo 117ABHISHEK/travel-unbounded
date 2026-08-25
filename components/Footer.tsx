@@ -9,12 +9,13 @@ export default function Footer() {
           {/* Brand */}
           <div className="md:col-span-5">
             <div className="flex items-center gap-2 mb-4">
-              <span className="w-9 h-9 rounded-xl bg-amber flex items-center justify-center text-navy font-display font-bold text-sm">
-                ∞
+              <span className="text-2xl font-bold leading-none">
+                <span className="bg-gradient-to-r from-gold via-orange to-teal bg-clip-text text-transparent">∞</span>
               </span>
-              <span className="font-display font-bold text-xl text-parchment">
-                Travel <span className="text-amber">Unbounded</span>
-              </span>
+              <div className="flex flex-col leading-none">
+                <span className="text-[10px] font-bold tracking-[0.2em] text-parchment/60 uppercase">Travel</span>
+                <span className="text-sm font-bold tracking-tight text-parchment">Unbounded</span>
+              </div>
             </div>
             <p className="text-sm leading-relaxed text-parchment/50 max-w-xs">
               India’s Most Trusted Experiential Travel Experts. Every destination,

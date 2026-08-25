@@ -10,13 +10,14 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 bg-navy/95 backdrop-blur-xl border-b border-white/10 shadow-lg shadow-navy/20">
       <nav className="max-w-7xl mx-auto flex items-center justify-between px-5 md:px-8 py-4">
         {/* Logo */}
-        <Link href="/" className="font-display font-bold text-xl tracking-tight flex items-center gap-2 group">
-          <span className="w-9 h-9 rounded-xl bg-amber flex items-center justify-center text-navy font-bold text-sm transition-transform group-hover:scale-110">
-            ∞
+        <Link href="/" className="flex items-center gap-2 group">
+          <span className="text-2xl font-bold leading-none">
+            <span className="bg-gradient-to-r from-gold via-orange to-teal bg-clip-text text-transparent">∞</span>
           </span>
-          <span className="text-parchment">
-            Travel <span className="text-amber">Unbounded</span>
-          </span>
+          <div className="flex flex-col leading-none">
+            <span className="text-[10px] font-bold tracking-[0.2em] text-parchment/60 uppercase">Travel</span>
+            <span className="text-sm font-bold tracking-tight text-parchment">Unbounded</span>
+          </div>
         </Link>
 
         {/* Desktop Nav */}

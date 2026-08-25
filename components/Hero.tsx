@@ -5,11 +5,11 @@ export default function Hero() {
     <section className="relative bg-navy text-parchment overflow-hidden grain">
       {/* Layered gradient background */}
       <div className="absolute inset-0 bg-gradient-to-br from-navy via-navy-light to-navy-mid" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(232,163,61,0.12),transparent_60%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(29,139,115,0.08),transparent_60%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(240,192,64,0.12),transparent_60%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(43,165,160,0.08),transparent_60%)]" />
 
       {/* Floating accent orbs */}
-      <div className="absolute top-20 right-[15%] w-72 h-72 bg-amber/10 rounded-full blur-3xl animate-float" />
+      <div className="absolute top-20 right-[15%] w-72 h-72 bg-gold/10 rounded-full blur-3xl animate-float" />
       <div className="absolute bottom-10 left-[10%] w-64 h-64 bg-teal/10 rounded-full blur-3xl animate-float delay-300" />
 
       <div className="max-w-7xl mx-auto px-5 md:px-8 py-28 md:py-40 text-center relative z-10">
@@ -24,7 +24,7 @@ export default function Hero() {
         <h1 className="font-display font-bold text-4xl sm:text-5xl md:text-7xl leading-[1.1] animate-fade-in-up delay-100">
           India&apos;s Most Trusted
           <br />
-          <span className="bg-gradient-to-r from-amber via-amber-light to-amber bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-gold via-orange to-teal bg-clip-text text-transparent">
             Experiential Travel
           </span>{" "}
           Experts
