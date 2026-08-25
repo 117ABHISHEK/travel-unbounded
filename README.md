@@ -92,6 +92,7 @@ models/
 - **Destination data and pricing are static/dummy** — no database or real pricing engine
 - **Images are from Unsplash** (free, no attribution required)
 - **Marketing copy is illustrative** — "500+ trips planned", "10+ destinations", and "3 offices worldwide" are placeholder stats, not real data
+- **Contact details are placeholders** — the email (`hello@travelunbounded.com`) and phone numbers shown on the site are invented, not real contact channels
 - **No authentication, admin dashboard, payment gateway, or booking engine** — these are planned for Phase 2
 - **No Redis, Kafka, microservices, AI chatbot, or complex search** — explicitly out of scope
 
