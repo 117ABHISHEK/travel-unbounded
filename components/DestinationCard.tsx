@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 interface DestinationCardProps {
   name: string;
   country: string;
@@ -15,9 +17,9 @@ export default function DestinationCard({ name, country, image, description, pri
         <p className="text-sm text-gray-600 mt-1 line-clamp-2">{description}</p>
         <div className="flex items-center justify-between mt-3">
           <span className="text-sm font-medium">Starting from ₹{price.toLocaleString("en-IN")}</span>
-          <button className="text-sm px-3 py-1.5 bg-blue-600 text-white rounded-md hover:bg-blue-700">
+          <Link href="/contact" className="text-sm px-3 py-1.5 bg-blue-600 text-white rounded-md hover:bg-blue-700">
             Enquire
-          </button>
+          </Link>
         </div>
       </div>
     </div>

@@ -1,14 +1,5 @@
 import DestinationCard from "./DestinationCard";
-
-interface Destination {
-  id: number;
-  name: string;
-  country: string;
-  image: string;
-  description: string;
-  price: number;
-  category: string;
-}
+import type { Destination } from "@/data/destinations";
 
 interface DestinationSectionProps {
   title: string;
