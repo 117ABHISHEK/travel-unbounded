@@ -1,3 +1,8 @@
+export const metadata = {
+  title: "About Travel Unbounded",
+  description: "Learn about Travel Unbounded's story, our offices in Bengaluru, Kochi and Nairobi, and why travelers trust us with their journeys.",
+};
+
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 

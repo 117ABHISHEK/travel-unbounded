@@ -1,3 +1,8 @@
+export const metadata = {
+  title: "Plan Your Trip | Travel Unbounded",
+  description: "Send us your travel enquiry and our experts will get back to you within 24 hours.",
+};
+
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BookingForm from "@/components/BookingForm";
