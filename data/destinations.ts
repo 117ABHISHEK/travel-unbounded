@@ -124,7 +124,7 @@ export const destinations: Destination[] = [
     name: "Sri Lanka",
     country: "Sri Lanka",
     image:
-      "https://images.unsplash.com/photo-1585155770913-cc8a6637ea5d?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1566552881560-0be862a7c445?auto=format&fit=crop&w=1200&q=80",
     description:
       "Ride the hill-country train through emerald tea plantations and spot leopards in Yala National Park.",
     price: 60000,
@@ -133,9 +133,9 @@ export const destinations: Destination[] = [
 ];
 
 export const indiaDestinations = destinations.filter(
-  (d) => d.category === "india"
+  (d) => d.category === "india",
 );
 
 export const internationalDestinations = destinations.filter(
-  (d) => d.category === "international"
+  (d) => d.category === "international",
 );

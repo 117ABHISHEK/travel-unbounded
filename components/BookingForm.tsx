@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import LoadingSpinner from "./LoadingSpinner";
 
 interface FormData {
   fullName: string;
@@ -256,10 +257,7 @@ export default function BookingForm() {
         className="w-full py-3.5 bg-navy hover:bg-navy-light disabled:bg-slate/40 text-parchment rounded-xl font-display font-semibold text-sm transition-all duration-200 hover:shadow-lg hover:shadow-navy/20"
       >
         {status === "submitting" ? (
-          <span className="inline-flex items-center gap-2">
-            <span className="w-4 h-4 border-2 border-parchment/30 border-t-parchment rounded-full animate-spin" />
-            Submitting…
-          </span>
+          <LoadingSpinner size="sm" label="Submitting…" />
         ) : (
           "Submit Enquiry"
         )}
