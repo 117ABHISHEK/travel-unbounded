@@ -1,5 +1,6 @@
 import { Space_Grotesk, Inter } from "next/font/google";
 import "./globals.css";
+import PageLoader from "@/components/PageLoader";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -15,7 +16,10 @@ const inter = Inter({
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${spaceGrotesk.variable} ${inter.variable}`}>
-      <body className="font-body bg-parchment text-ink antialiased">{children}</body>
+      <body className="font-body bg-parchment text-ink antialiased">
+        <PageLoader />
+        {children}
+      </body>
     </html>
   );
 }
