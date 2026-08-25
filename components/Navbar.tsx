@@ -2,15 +2,15 @@ import Link from "next/link";
 
 export default function Navbar() {
   return (
-    <header className="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-gray-100">
+    <header className="sticky top-0 z-50 bg-navy text-parchment border-b border-navy-light">
       <nav className="max-w-7xl mx-auto flex items-center justify-between px-4 md:px-8 py-4">
-        <Link href="/" className="text-xl font-bold tracking-tight">
-          Travel Unbounded
+        <Link href="/" className="font-display font-bold text-xl tracking-tight flex items-center gap-1">
+          Travel <span className="text-amber">∞</span> Unbounded
         </Link>
-        <div className="flex gap-6 text-sm font-medium text-gray-800">
-          <Link href="/" className="hover:text-blue-600">Home</Link>
-          <Link href="/about" className="hover:text-blue-600">About</Link>
-          <Link href="/contact" className="hover:text-blue-600">Contact</Link>
+        <div className="flex gap-8 text-sm font-medium">
+          <Link href="/" className="hover:text-amber transition-colors">Home</Link>
+          <Link href="/about" className="hover:text-amber transition-colors">About</Link>
+          <Link href="/contact" className="hover:text-amber transition-colors">Contact</Link>
         </div>
       </nav>
     </header>
