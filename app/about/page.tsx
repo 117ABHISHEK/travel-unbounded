@@ -5,25 +5,26 @@ export const metadata = {
 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { MapPin, Check } from "lucide-react";
 
 const offices = [
   {
     city: "Bengaluru",
     role: "Headquarters",
     lines: ["541, 7th Main Rd, HAL 2nd Stage", "Indiranagar, Bengaluru – 560008", "India"],
-    icon: "🇮🇳",
+    icon: MapPin,
   },
   {
     city: "Kochi",
     role: "Kerala Office",
     lines: ["LR Towers, S Janatha Road", "Palavivatton, Kochi – 682025", "India"],
-    icon: "🇮🇳",
+    icon: MapPin,
   },
   {
     city: "Nairobi",
     role: "Kenya Office",
     lines: ["Westpark Towers, Muthithi Road", "Nairobi, P.O. Box 6950", "Postal Code 00100, Kenya"],
-    icon: "🇰🇪",
+    icon: MapPin,
   },
 ];
 
@@ -74,7 +75,9 @@ export default function About() {
                 className="p-6 bg-white border border-ink/5 rounded-2xl hover:shadow-lg hover:shadow-navy/5 transition-all duration-300 hover:-translate-y-1"
               >
                 <div className="flex items-center gap-3 mb-3">
-                  <span className="text-2xl">{office.icon}</span>
+                  <span className="w-10 h-10 bg-amber/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <office.icon size={20} className="text-amber-dark" />
+                  </span>
                   <div>
                     <h3 className="font-display font-semibold text-navy">{office.city}</h3>
                     <p className="text-xs text-slate font-mono">{office.role}</p>
@@ -104,7 +107,7 @@ export default function About() {
                 className="flex items-start gap-3 p-5 bg-white border border-ink/5 rounded-xl"
               >
                 <span className="w-6 h-6 bg-amber/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <span className="text-amber text-sm">✓</span>
+                  <Check size={14} className="text-amber-dark" />
                 </span>
                 <p className="text-sm text-slate leading-relaxed">{point}</p>
               </div>

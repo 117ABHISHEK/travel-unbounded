@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { Check } from "lucide-react";
 import LoadingSpinner from "./LoadingSpinner";
 
 interface FormData {
@@ -114,7 +115,7 @@ export default function BookingForm() {
     return (
       <div className="p-8 bg-teal/5 border border-teal/20 rounded-2xl text-center animate-fade-in-up">
         <div className="w-16 h-16 bg-teal/10 rounded-full flex items-center justify-center mx-auto mb-4">
-          <span className="text-3xl">✓</span>
+          <Check size={32} className="text-teal" />
         </div>
         <p className="text-navy font-display font-bold text-xl">Thank you!</p>
         <p className="text-slate mt-2">Our travel expert will contact you within 24 hours.</p>

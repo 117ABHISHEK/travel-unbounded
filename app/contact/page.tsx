@@ -6,6 +6,7 @@ export const metadata = {
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BookingForm from "@/components/BookingForm";
+import { Mail, Phone, MapPin } from "lucide-react";
 
 export default function Contact() {
   return (
@@ -28,14 +29,14 @@ export default function Contact() {
             </p>
 
             <div className="space-y-5">
-              {[
-                { icon: "✉", title: "Email Us", desc: "hello@travelunbounded.com" },
-                { icon: "☎", title: "Call Us", desc: "+91 80 4567 8900" },
-                { icon: "📍", title: "Visit Us", desc: "Bengaluru • Kochi • Nairobi" },
+              {              [
+                { icon: Mail, title: "Email Us", desc: "hello@travelunbounded.com" },
+                { icon: Phone, title: "Call Us", desc: "+91 80 4567 8900" },
+                { icon: MapPin, title: "Visit Us", desc: "Bengaluru • Kochi • Nairobi" },
               ].map((item) => (
                 <div key={item.title} className="flex items-start gap-3">
                   <span className="w-10 h-10 bg-navy/5 rounded-xl flex items-center justify-center text-navy flex-shrink-0">
-                    {item.icon}
+                    <item.icon size={18} />
                   </span>
                   <div>
                     <p className="text-sm font-medium text-navy">{item.title}</p>
