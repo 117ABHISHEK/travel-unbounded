@@ -15,7 +15,7 @@ const inter = Inter({
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${spaceGrotesk.variable} ${inter.variable}`}>
-      <body className="font-body bg-parchment text-ink">{children}</body>
+      <body className="font-body bg-parchment text-ink antialiased">{children}</body>
     </html>
   );
 }

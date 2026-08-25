@@ -24,6 +24,11 @@ const initialState: FormData = {
   numberOfChildren: 0,
 };
 
+const inputClass =
+  "w-full px-4 py-3 bg-white border border-ink/10 rounded-xl text-ink text-sm placeholder:text-slate/50 focus:outline-none focus:border-amber focus:ring-2 focus:ring-amber/20 transition-all duration-200";
+
+const labelClass = "block text-sm font-medium text-navy mb-1.5";
+
 export default function BookingForm() {
   const [formData, setFormData] = useState<FormData>(initialState);
   const [errors, setErrors] = useState<Partial<Record<keyof FormData, string>>>({});
@@ -106,12 +111,15 @@ export default function BookingForm() {
 
   if (status === "success") {
     return (
-      <div className="p-6 bg-green-50 border border-green-200 rounded-lg text-center">
-        <p className="text-green-800 font-semibold">Thank you!</p>
-        <p className="text-green-700 mt-1">Our travel expert will contact you within 24 hours.</p>
+      <div className="p-8 bg-teal/5 border border-teal/20 rounded-2xl text-center animate-fade-in-up">
+        <div className="w-16 h-16 bg-teal/10 rounded-full flex items-center justify-center mx-auto mb-4">
+          <span className="text-3xl">✓</span>
+        </div>
+        <p className="text-navy font-display font-bold text-xl">Thank you!</p>
+        <p className="text-slate mt-2">Our travel expert will contact you within 24 hours.</p>
         <button
           onClick={() => setStatus("idle")}
-          className="mt-4 text-sm text-green-800 underline"
+          className="mt-5 px-6 py-2.5 text-sm font-medium text-teal border border-teal/30 rounded-full hover:bg-teal/5 transition-all"
         >
           Submit another enquiry
         </button>
@@ -120,26 +128,29 @@ export default function BookingForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4 max-w-xl">
+    <form onSubmit={handleSubmit} className="space-y-5 max-w-2xl">
+      {/* Full Name */}
       <div>
-        <label className="block text-sm font-medium mb-1">Full Name</label>
+        <label className={labelClass}>Full Name</label>
         <input
           name="fullName"
+          placeholder="Enter your full name"
           value={formData.fullName}
           onChange={handleChange}
-          className="w-full border rounded-md px-3 py-2"
+          className={inputClass}
         />
-        {errors.fullName && <p className="text-red-600 text-sm mt-1">{errors.fullName}</p>}
+        {errors.fullName && <p className="text-red-500 text-xs mt-1.5">{errors.fullName}</p>}
       </div>
 
-      <div className="flex gap-2">
-        <div className="w-24">
-          <label className="block text-sm font-medium mb-1">Code</label>
+      {/* Phone */}
+      <div className="flex gap-3">
+        <div className="w-28">
+          <label className={labelClass}>Code</label>
           <select
             name="countryCode"
             value={formData.countryCode}
             onChange={handleChange}
-            className="w-full border rounded-md px-2 py-2"
+            className={inputClass}
           >
             <option value="+91">+91</option>
             <option value="+1">+1</option>
@@ -149,75 +160,81 @@ export default function BookingForm() {
           </select>
         </div>
         <div className="flex-1">
-          <label className="block text-sm font-medium mb-1">Contact Number</label>
+          <label className={labelClass}>Contact Number</label>
           <input
             name="contactNumber"
+            placeholder="Phone number"
             value={formData.contactNumber}
             onChange={handleChange}
-            className="w-full border rounded-md px-3 py-2"
+            className={inputClass}
           />
-          {errors.contactNumber && <p className="text-red-600 text-sm mt-1">{errors.contactNumber}</p>}
+          {errors.contactNumber && <p className="text-red-500 text-xs mt-1.5">{errors.contactNumber}</p>}
         </div>
       </div>
 
+      {/* Email */}
       <div>
-        <label className="block text-sm font-medium mb-1">Email</label>
+        <label className={labelClass}>Email</label>
         <input
           type="email"
           name="email"
+          placeholder="your@email.com"
           value={formData.email}
           onChange={handleChange}
-          className="w-full border rounded-md px-3 py-2"
+          className={inputClass}
         />
-        {errors.email && <p className="text-red-600 text-sm mt-1">{errors.email}</p>}
+        {errors.email && <p className="text-red-500 text-xs mt-1.5">{errors.email}</p>}
       </div>
 
+      {/* Date */}
       <div>
-        <label className="block text-sm font-medium mb-1">Date of Travel</label>
+        <label className={labelClass}>Date of Travel</label>
         <input
           type="date"
           name="dateOfTravel"
           value={formData.dateOfTravel}
           onChange={handleChange}
-          className="w-full border rounded-md px-3 py-2"
+          className={inputClass}
         />
-        {errors.dateOfTravel && <p className="text-red-600 text-sm mt-1">{errors.dateOfTravel}</p>}
+        {errors.dateOfTravel && <p className="text-red-500 text-xs mt-1.5">{errors.dateOfTravel}</p>}
       </div>
 
+      {/* People & Children */}
       <div className="flex gap-4">
         <div className="flex-1">
-          <label className="block text-sm font-medium mb-1">Number of People</label>
+          <label className={labelClass}>Number of People</label>
           <input
             type="number"
             name="numberOfPeople"
             min={1}
             value={formData.numberOfPeople}
             onChange={handleChange}
-            className="w-full border rounded-md px-3 py-2"
+            className={inputClass}
           />
-          {errors.numberOfPeople && <p className="text-red-600 text-sm mt-1">{errors.numberOfPeople}</p>}
+          {errors.numberOfPeople && <p className="text-red-500 text-xs mt-1.5">{errors.numberOfPeople}</p>}
         </div>
         <div className="flex-1">
-          <label className="block text-sm font-medium mb-1">Children</label>
+          <label className={labelClass}>Children</label>
           <input
             type="number"
             name="numberOfChildren"
             min={0}
             value={formData.numberOfChildren}
             onChange={handleChange}
-            className="w-full border rounded-md px-3 py-2"
+            className={inputClass}
           />
-          {errors.numberOfChildren && <p className="text-red-600 text-sm mt-1">{errors.numberOfChildren}</p>}
+          {errors.numberOfChildren && <p className="text-red-500 text-xs mt-1.5">{errors.numberOfChildren}</p>}
         </div>
       </div>
 
+      {/* Hotel Category */}
       <div>
-        <label className="block text-sm font-medium mb-1">Hotel Category</label>
+        <label className={labelClass}>Hotel Category</label>
         <select
           name="hotelCategory"
           value={formData.hotelCategory}
           onChange={handleChange}
-          className="w-full border rounded-md px-3 py-2"
+          className={inputClass}
         >
           <option value="Standard">Standard</option>
           <option value="Deluxe">Deluxe</option>
@@ -225,16 +242,27 @@ export default function BookingForm() {
         </select>
       </div>
 
+      {/* Error */}
       {status === "error" && (
-        <p className="text-red-600 text-sm">{errorMessage}</p>
+        <div className="p-4 bg-red-50 border border-red-200 rounded-xl text-red-600 text-sm">
+          {errorMessage}
+        </div>
       )}
 
+      {/* Submit */}
       <button
         type="submit"
         disabled={status === "submitting"}
-        className="w-full py-3 bg-blue-600 hover:bg-blue-700 disabled:bg-gray-400 text-white rounded-md font-medium"
+        className="w-full py-3.5 bg-navy hover:bg-navy-light disabled:bg-slate/40 text-parchment rounded-xl font-display font-semibold text-sm transition-all duration-200 hover:shadow-lg hover:shadow-navy/20"
       >
-        {status === "submitting" ? "Submitting…" : "Submit Enquiry"}
+        {status === "submitting" ? (
+          <span className="inline-flex items-center gap-2">
+            <span className="w-4 h-4 border-2 border-parchment/30 border-t-parchment rounded-full animate-spin" />
+            Submitting…
+          </span>
+        ) : (
+          "Submit Enquiry"
+        )}
       </button>
     </form>
   );

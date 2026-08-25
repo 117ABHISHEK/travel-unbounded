@@ -10,27 +10,45 @@ interface DestinationCardProps {
 
 export default function DestinationCard({ name, country, image, description, price }: DestinationCardProps) {
   return (
-    <div className="group bg-parchment rounded-2xl overflow-hidden shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-      <div className="relative h-48 overflow-hidden">
+    <div className="group relative bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl hover:shadow-navy/10 hover:-translate-y-2 transition-all duration-500 border border-ink/5">
+      {/* Image */}
+      <div className="relative h-52 overflow-hidden">
         <img
           src={image}
           alt={name}
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
         />
+        {/* Gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-navy/60 via-navy/10 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500" />
+        {/* Country badge */}
+        <div className="absolute top-3 left-3">
+          <span className="px-3 py-1 bg-white/90 backdrop-blur-sm text-navy text-xs font-mono font-medium rounded-full">
+            {country}
+          </span>
+        </div>
+        {/* Price overlay */}
+        <div className="absolute bottom-3 right-3">
+          <span className="px-3 py-1.5 bg-navy/80 backdrop-blur-sm text-amber text-sm font-display font-semibold rounded-full">
+            ₹{price.toLocaleString("en-IN")}+
+          </span>
+        </div>
       </div>
-      {/* perforated divider */}
-      <div className="border-t-2 border-dashed border-navy/20 mx-4" />
-      <div className="p-4">
-        <h3 className="font-display font-semibold text-lg text-navy">{name}</h3>
-        <p className="text-xs text-navy/60 font-mono uppercase tracking-wide">{country}</p>
-        <p className="text-sm text-ink/70 mt-2 line-clamp-2">{description}</p>
-        <div className="flex items-center justify-between mt-4">
-          <span className="font-mono text-sm text-navy font-medium">₹{price.toLocaleString("en-IN")}+</span>
+
+      {/* Content */}
+      <div className="p-5">
+        <h3 className="font-display font-bold text-lg text-navy group-hover:text-teal transition-colors duration-300">
+          {name}
+        </h3>
+        <p className="text-sm text-slate mt-1.5 line-clamp-2 leading-relaxed">
+          {description}
+        </p>
+        <div className="mt-4 pt-4 border-t border-ink/5">
           <Link
             href="/contact"
-            className="text-sm px-4 py-2 bg-navy text-parchment rounded-full hover:bg-teal transition-colors"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-teal hover:text-teal-dark transition-colors group/btn"
           >
-            Enquire
+            Explore
+            <span className="transition-transform group-hover/btn:translate-x-1">→</span>
           </Link>
         </div>
       </div>

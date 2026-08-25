@@ -1,13 +1,21 @@
 @import "tailwindcss";
 
 @theme {
-  --color-navy: #0f2a3c;
-  --color-navy-light: #1c3f56;
-  --color-parchment: #f6f1e4;
+  --color-navy: #0b1d33;
+  --color-navy-light: #132d4a;
+  --color-navy-mid: #1a3a5c;
+  --color-parchment: #faf8f5;
+  --color-parchment-warm: #f5f0e8;
   --color-amber: #e8a33d;
   --color-amber-dark: #c9822a;
-  --color-teal: #2f7a6b;
+  --color-amber-light: #f5c563;
+  --color-teal: #1d8b73;
+  --color-teal-dark: #15705b;
   --color-ink: #1a1a1a;
+  --color-slate: #475569;
+  --color-mist: #e8edf3;
+  --color-glass: rgba(255, 255, 255, 0.08);
+  --color-glass-strong: rgba(255, 255, 255, 0.15);
 
   --font-display: var(--font-display);
   --font-body: var(--font-body);
@@ -18,7 +26,111 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  background: var(--color-parchment);
+}
+
+/* ──── Smooth Selection ──── */
+::selection {
+  background: var(--color-amber);
+  color: var(--color-navy);
+}
+
+/* ──── Custom Scrollbar ──── */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-parchment-warm);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-navy-light);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-navy-mid);
+}
+
+/* ──── Focus Ring ──── */
+:focus-visible {
+  outline: 2px solid var(--color-amber);
+  outline-offset: 2px;
+}
+
+/* ──── Modern Input Styles ──── */
 input, select, textarea {
   background-color: white;
-  color: #1a1a1a;
+  color: var(--color-ink);
+  border: 1.5px solid var(--color-mist);
+  border-radius: 12px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+input:focus, select:focus, textarea:focus {
+  border-color: var(--color-amber);
+  box-shadow: 0 0 0 3px rgba(232, 163, 61, 0.15);
+  outline: none;
+}
+
+/* ──── Subtle Animations ──── */
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(232, 163, 61, 0.4); }
+  50% { box-shadow: 0 0 20px 4px rgba(232, 163, 61, 0.2); }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease-out both;
+}
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out both;
+}
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+.animate-shimmer {
+  background-size: 200% 100%;
+  animation: shimmer 2s linear infinite;
+}
+.animate-pulse-glow {
+  animation: pulse-glow 2.5s ease-in-out infinite;
+}
+
+/* Stagger delays */
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
+
+/* ──── Glass Card ──── */
+.glass-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+/* ──── Grain Overlay ──── */
+.grain::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 1;
 }
