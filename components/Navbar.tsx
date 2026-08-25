@@ -7,7 +7,7 @@ export default function Navbar() {
         <Link href="/" className="text-xl font-bold tracking-tight">
           Travel Unbounded
         </Link>
-        <div className="flex gap-6 text-sm font-medium">
+        <div className="flex gap-6 text-sm font-medium text-gray-800">
           <Link href="/" className="hover:text-blue-600">Home</Link>
           <Link href="/about" className="hover:text-blue-600">About</Link>
           <Link href="/contact" className="hover:text-blue-600">Contact</Link>
